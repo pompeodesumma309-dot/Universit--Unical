@@ -6,23 +6,23 @@ struct Punto{
     int x;
     int y;
 
-}
+};
 
 int main(){
     Punto p1,p2;
 
-    p1 = p1 + p2;
+    p1 = p1 + p2; //ERRORE: non possiamo farla cosi
 }
 ```
 
 tipo operator simboloOperatore (parametri) //corpo della funzione
 ```cpp
-class CVectore{
+class CVector{
 public:
     int x,y;
 
-    CVector(){};
-    CVector(int a, int b): x(a), y(b){};
+    CVector(){}; // costruttore di default
+    CVector(int a, int b): x(a), y(b){}; // costruttore
 
     int get_x();
     CVector operator+ (const CVector & param);

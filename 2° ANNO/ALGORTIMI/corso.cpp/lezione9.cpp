@@ -105,15 +105,15 @@ Rectangle(int _width, int _height): width(_width), height(_height)  // stiamo di
 
 ```cpp
 class Circle{
-    double radius;
+    double radius; // privato di default
 
 public: 
-    Circle(double r):radius(r){} // costruttore
+    Circle(double r):radius(r){} // costruttore più veloce ed elegante; e essendo che non ha il costrutto vuoto il cerchio non può nascere se non diciamo subito quanto vale il suo raggio
     double area(){return radius*radius*3.14;}
 };
 
 class Cylinder{ // funzione privata
-    Circle base;
+    Circle base; // è un oggetto di tipo Circle
     double height;
 public:
     Cylinder(double r, double h): base(r), height(h) // o qui, inizializzazione in fase di creazione
