@@ -47,15 +47,14 @@ Rectangle::Rectangle(int _width, int _height){ // COSTRUTTORE
 }
 
 void Rectangle::set_width(int _width){
-    width = _width; // width a sinistra è quella iniziale della classe Rectangle
-    int Rectangle::get_width(){return width};
-}
+    width = _width; // width a sinistra è quella iniziale della classe Rectangle  
+}int Rectangle::get_width(){return width};
+
 
 
 void Rectangle::set_height(int _height){
     height = _height;
-    int Rectangle::get_height (){return height};
-}
+}int Rectangle::get_height (){return height};
 
 
 int main(){
