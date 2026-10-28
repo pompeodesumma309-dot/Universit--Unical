@@ -182,3 +182,25 @@ public:
 
 
 ```
+
+### Esempio: rifare la "compatta" array con le tabelle hash
+
+```cpp
+template <class T>
+vector<T> compatta(const vector<T>& v){
+
+    unordered_map<T, bool> seen;
+    vector<T> result;
+
+    for(int i = 0; i<v.size(); ++i){
+
+        if (!seen(v[i])) {
+            result.push_back(v[i]);
+            seen[v[i]] = true;
+        }
+    }
+    return result;
+}
+```
+
+PER CASE -> RENDERE PIU ROBUSTO QUESTO PROGRAMMA, RISCRIVENDOLO CON LE TABELLE HASH
