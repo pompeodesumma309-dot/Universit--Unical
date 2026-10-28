@@ -1,39 +1,54 @@
 {
   "main": {
-    "id": "8024438b10ed0f7a",
+    "id": "f31bff3c4ec3e9ad",
     "type": "split",
     "children": [
       {
-        "id": "3c47e21f3fc2a760",
+        "id": "d8a25ab989fed6f2",
         "type": "tabs",
         "children": [
           {
-            "id": "65124ca272e0ae0b",
+            "id": "a8567a40375a32cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "file:C:/Users/pompe/OneDrive/Università Unical/2° ANNO/RICERCA OPERATIVA/RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "TEORIA 3 RICERCA OPERATIVA"
+            }
+          },
+          {
+            "id": "02a7dbfed5d5b5d9",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "BASE DI DATI EXCAW/ESERCITAZIONE2.excalidraw.md"
+                "file": "Appunti Unical EXCAW/BASE DI DATI EXCALIDAW/ESERCITAZIONE2.excalidraw.md"
               },
               "icon": "excalidraw-icon",
               "title": "ESERCITAZIONE2.excalidraw"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "2b2e67a8035c4c49",
+    "id": "fbed981ace319927",
     "type": "split",
     "children": [
       {
-        "id": "febbaf7cb6777fcc",
+        "id": "344ff82fa16b3328",
         "type": "tabs",
         "children": [
           {
-            "id": "a0cd5dd76090cb02",
+            "id": "42ef9ac1f5fb38db",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -48,7 +63,7 @@
             }
           },
           {
-            "id": "f9d61b74028f5fa1",
+            "id": "fdcd2912644f48b2",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +80,7 @@
             }
           },
           {
-            "id": "71748fab14ff9dda",
+            "id": "55fdc25780647e4f",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -84,15 +99,15 @@
     "width": 300
   },
   "right": {
-    "id": "cc87226b89c3bfff",
+    "id": "6517aaaf1f55a141",
     "type": "split",
     "children": [
       {
-        "id": "feac09caf3bdc41e",
+        "id": "c05b5493bf3ac682",
         "type": "tabs",
         "children": [
           {
-            "id": "f835d4c2e82e6ded",
+            "id": "1c799504ee41e8fb",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -111,7 +126,7 @@
             }
           },
           {
-            "id": "2417733c43319fcd",
+            "id": "a3f7d6f30db35a6f",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -125,7 +140,7 @@
             }
           },
           {
-            "id": "5c7045612cc66fba",
+            "id": "c68b0641cf94d3c8",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -140,7 +155,7 @@
             }
           },
           {
-            "id": "682e8f0703a26c13",
+            "id": "624063424e228534",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -154,7 +169,7 @@
             }
           },
           {
-            "id": "b46fab1366425efa",
+            "id": "e568b944f0a65b8b",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -167,23 +182,12 @@
               "icon": "lucide-list",
               "title": "Struttura"
             }
-          },
-          {
-            "id": "860ff9c54f7ec911",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw-sidepanel",
-              "state": {},
-              "icon": "excalidraw-icon",
-              "title": "Excalidraw Sidepanel"
-            }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
@@ -198,21 +202,24 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "a0cd5dd76090cb02",
+  "active": "02a7dbfed5d5b5d9",
   "lastOpenFiles": [
-    "RICERCA OPERATIVA EXCAW",
+    "Excalidraw/Drawing 2026-10-27 17.38.06.excalidraw.md",
+    "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
+    "Appunti Unical EXCAW/Drawing 2026-10-27 17.34.56.excalidraw.md",
+    "file:C:/Users/pompe/OneDrive/Università Unical/2° ANNO/RICERCA OPERATIVA/RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
     "Benvenuto.md",
-    "BASE DI DATI EXCAW/ESERCITAZIONE2.excalidraw.md",
-    "WhatsApp Image 2026-10-27 at 15.05.54.jpeg",
-    "WhatsApp Image 2026-10-27 at 15.30.29.jpeg",
-    "Pasted image 20261027150908.png",
-    "Pasted image 20261027150859.png",
-    "BASE DI DATI EXCAW",
-    "Excalidraw/Drawing 2026-10-27 11.45.36_0.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-27 11.45.36.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-27 11.45.36_1.excalidraw.md",
-    "Excalidraw/Drawing 2026-10-27 14.50.43.excalidraw.md",
+    "RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
     "Excalidraw",
-    "Algoritmi e programmazione"
+    "Senza nome.md",
+    "RICERCA OPERATIVA EXCWA",
+    "file:C:/Users/pompe/OneDrive/Università Unical/2° ANNO/BASE DI DATI/BASE DI DATI EXCALIDAW/ESERCITAZIONE2.excalidraw.md",
+    "ALGORITMI EXCAWA",
+    "file:C:/Users/pompe/OneDrive/Università Unical/2° ANNO/BASE DI DATI/BASE DI DATI EXCAW/ESERCITAZIONE2.excalidraw.md",
+    "BASE DI DATI EXCALIDAW/ESERCITAZIONE2.excalidraw.md",
+    "file:C:/Users/pompe/OneDrive/Università Unical/2° ANNO/Appunti Unical EXCAW/BASE DI DATI EXCAW/ESERCITAZIONE2.excalidraw.md",
+    "BASE DI DATI EXCALIDAW",
+    "file:C:/Users/pompe/OneDrive/Università Unical/2° ANNO/Appunti Unical EXCAW/BASE DI DATI/ESERCITAZIONE2.excalidraw.md",
+    "Appunti Unical EXCAW"
   ]
 }
