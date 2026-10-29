@@ -55,8 +55,10 @@ public:
     CVector(int a, int b): x(a), y(b){};
 
     friend ostream& operator<<(ostream &, const CVector &);
-    friend istream& operator
+    friend istream& operator>>(istream &, CVector &);
+
 };
+
 CVector operator+ (const CVector &lhs, const CVector &rhs){
     CVector temp;
     temp.x = lhs.x + rhs.x;
@@ -64,11 +66,17 @@ CVector operator+ (const CVector &lhs, const CVector &rhs){
     return temp;
 
 };
+
+//adesso il main sarà diverso rispetto a prima
+int main(){
+    CVector v1(3, 4), v2(5,6), v3;
+    v3 = operator+ (v1,v2);
+}
 ```
 
 ### Overloading di << e >>
 ```cpp
-ostream operator<<(ostream &os, const CVector &v){
+ostream& operator<<(ostream &os, const CVector &v){
     os<<"["<<v.x<<","<<v.y<<"]";
     return os;
 }
@@ -87,6 +95,7 @@ int main(){
     CVector v1(3,4), v2(5,6), v3;
     v3 = v2 + v1;
 
+    cout<<v1<<v2;
 }
 ```
 
