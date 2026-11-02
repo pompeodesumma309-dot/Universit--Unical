@@ -55,7 +55,7 @@ public:
     CVector(int a, int b): x(a), y(b){};
 
     friend ostream& operator<<(ostream &, const CVector &);
-    friend istream& operator>>(istream &, CVector &);
+    friend istream& operator>>(istream &, const CVector &);
 
 };
 
@@ -104,7 +104,7 @@ int main(){
 class Dummy{
 public:
     bool isItMe (Dummy & param);
-}
+};
 
 bool Dummy::isItMe(Dummy & param){
     if(&param == this) return true;
@@ -114,10 +114,18 @@ bool Dummy::isItMe(Dummy & param){
 int main(){
     Dummy a;
     Dummy *b = &a;
-    if (a->isItMe(a)) cout<<"si"<<endl;
+
+    //ATTENZIONE
+    
+    // Quando abbiamo un oggetto normale, come 'a', non usiamo la -> ma il .
+
+    // Con i puntatori come '&b' si una la freccia
+
+    if (b->isItMe(a)) cout<<"si"<<endl;
     else cout<<"no"<<endl;
 
-    if (a.isItMe(*b))
+    if (a.isItMe(*b)) cout<<"si"<<endl;
+    else cout<<"no"<<endl;
 
 }
 
