@@ -144,15 +144,15 @@ class MyClass{
         MyClass(int val):x(val) {};
         int get() const {return x;} //get è una funzione membro costante
         int get() {return x;}
-        vois set(int a) {x=a;}
-}
+        void set(int a) {x=a;}
+};
 
 int main(){
     const MyClass foo(10);
     //cout<<foo.x<<endl;
     cout<<foo.get()<<endl;
     foo.set(10); //errore
-    bar(8); // ok
+    bar.set(8); // ok
 
 
 return 0;

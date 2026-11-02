@@ -159,7 +159,22 @@
     }
   },
   "markdownImageDeletionPreference": "ask",
-  "scriptEngineSettings": {},
+  "scriptEngineSettings": {
+    "Downloaded/Palette loader": {
+      "Palette folder": {
+        "value": "Excalidraw/Palettes",
+        "description": "The path to the folder where you store the Excalidraw Palettes"
+      },
+      "Light-gray": {
+        "value": "#505050",
+        "description": "Base light-gray used for mixing with the accent color to generate the palette light-gray"
+      },
+      "Dark-gray": {
+        "value": "#e0e0e0",
+        "description": "Base dark-gray used for mixing with the accent color to generate the palette dark-gray"
+      }
+    }
+  },
   "autostartScripts": {},
   "autostartScriptFailures": {},
   "previousRelease": "2.29.0",

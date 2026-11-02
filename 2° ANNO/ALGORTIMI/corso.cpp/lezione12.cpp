@@ -10,9 +10,9 @@ class myPair{
 public:
     myPair (){};
     myPair(const T& first,const T& second): a(first), b(second){};
-    const T& first(); // const T& evita di fare la copia
+    const T& first() const; // const T& evita di fare la copia
     T& first(); // se ci fosse questa cosa, scriviamo ...
-    const T& second(); 
+    const T& second() const; 
 }
 
 template <class T>

@@ -5,7 +5,8 @@
 class MyClass{
     public:
         int x;
-        MyClass(int val):x(val) {};
+        MyClass(int val):x(val) {}; // costruttore: inizializza x con il valore 'val'
+        
         int get() const {return x;} //get è una funzione membro costante
 
         int& get() {return x;}

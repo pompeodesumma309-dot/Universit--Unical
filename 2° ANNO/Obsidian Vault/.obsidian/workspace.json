@@ -32,9 +32,33 @@
               "icon": "excalidraw-icon",
               "title": "TEORIA 3 RICERCA OPERATIVA"
             }
+          },
+          {
+            "id": "8c8825d0bd2fb0d7",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Appunti Unical EXCAW/programmazione/lezione11.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "lezione11"
+            }
+          },
+          {
+            "id": "4a4195dcfb1078b3",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Appunti Unical EXCAW/programmazione/lezione12.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "lezione12"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -96,7 +120,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 213
+    "width": 200
   },
   "right": {
     "id": "6517aaaf1f55a141",
@@ -202,10 +226,18 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "02a7dbfed5d5b5d9",
+  "active": "42ef9ac1f5fb38db",
   "lastOpenFiles": [
-    "Appunti Unical EXCAW/BASE DI DATI EXCALIDAW/ESERCITAZIONE2.excalidraw.md",
+    "Appunti Unical EXCAW/programmazione/lezione11.md",
+    "Appunti Unical EXCAW/programmazione/lezione12.md",
     "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
+    "Senza nome/desktop.ini",
+    "Appunti Unical EXCAW/programmazione",
+    "Excalidraw/Scripts/Downloaded/Palette loader.svg",
+    "Excalidraw/Scripts/Downloaded/Palette loader.md",
+    "Excalidraw/Scripts/Downloaded",
+    "Excalidraw/Scripts",
+    "Appunti Unical EXCAW/BASE DI DATI EXCALIDAW/ESERCITAZIONE2.excalidraw.md",
     "Excalidraw/Drawing 2026-10-27 17.38.06.excalidraw.md",
     "Appunti Unical EXCAW/Drawing 2026-10-27 17.34.56.excalidraw.md",
     "file:C:/Users/pompe/OneDrive/Università Unical/2° ANNO/RICERCA OPERATIVA/RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
