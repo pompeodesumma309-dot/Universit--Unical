@@ -16,13 +16,13 @@ public:
 }
 
 template <class T>
-const T& myPair<T>::first(){return a};
+const T& myPair<T>::first(){return a;}
 
 template <class T>
-const T& myPair<T>::second(){return b};
+const T& myPair<T>::second(){return b;}
 
 template <class T>
-T& myPiar<T>::first(){return a};
+T& myPiar<T>::first(){return a;}
 
 
 int main(){
