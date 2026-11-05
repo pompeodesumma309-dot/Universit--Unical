@@ -186,7 +186,7 @@ class docente : public Persona{
         return anni_servizio;
     }
 
-    float<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<. quantopagoamensa () const override{
+    float quantopagoamensa () const override{
         if (anni_servizio < 10) return 6.0;
         if (anni_servizio <20 ) return 5.0;
         if(anni_servizio < 30) return 4.0;
