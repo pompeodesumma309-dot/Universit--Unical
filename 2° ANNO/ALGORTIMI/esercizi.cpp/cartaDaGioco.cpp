@@ -62,17 +62,49 @@ bool CartaDaGioco::operator<(const CartaDaGioco& parametro) const{
     else{return valoreSimbolo() < parametro.valoreSimbolo();}
 }
 
-ostream& operator<<(ostream& os, const CartaDaGioco& carta){
-    return os << carta.simbolo<<" "<< carta.seme;
+ostream& operator<<(ostream& out, const CartaDaGioco& carta){
+    if (carta.simbolo == '1') {
+        out << "10";
+    } else {
+        out << carta.simbolo; 
+    }
+
+    out << " di ";
+
+    if (carta.seme == 'C') out << "Cuori";
+    if (carta.seme == 'P') out << "Picche";
+    if (carta.seme == 'F') out << "Fiori";
+    if (carta.seme == 'Q') out << "Quadri";
+
+    return out;
 }
 
 istream& operator>>(istream& is, CartaDaGioco& carta){
-
-    return is>>carta.simbolo>>carta.seme;
+    char tempSeme, tempSimbolo;
+    is>>tempSimbolo>>tempSeme;
+    carta = CartaDaGioco(tempSeme, tempSimbolo);
+    return is;
 }
 
 
 
 
+int main() { 
+
+	CartaDaGioco assoDiPicche('P','A');
+	cout << assoDiPicche << endl;
+
+	CartaDaGioco dueDiCuori('C', '2');
+	cout << dueDiCuori << endl;
+
+	if (assoDiPicche < dueDiCuori) {
+		cout << "Asso di picche è minore";
+	}
+	else {
+		cout << "Due di cuori è minore";
+	}
+	
+	return 0;
+}
 
 

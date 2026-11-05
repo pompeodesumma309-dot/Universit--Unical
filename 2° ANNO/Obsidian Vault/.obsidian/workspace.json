@@ -56,9 +56,21 @@
               "icon": "excalidraw-icon",
               "title": "ESERCITAZIONE2.excalidraw"
             }
+          },
+          {
+            "id": "c4219cc388a75a52",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 4 RICERCA.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "TEORIA 4 RICERCA"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -226,10 +238,11 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4a4195dcfb1078b3",
+  "active": "42ef9ac1f5fb38db",
   "lastOpenFiles": [
-    "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
     "Appunti Unical EXCAW/BASE DI DATI EXCALIDAW/ESERCITAZIONE2.excalidraw.md",
+    "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 4 RICERCA.md",
+    "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
     "Appunti Unical EXCAW/programmazione/lezione12.md",
     "Appunti Unical EXCAW/programmazione/lezione11.md",
     "Senza nome/desktop.ini",
