@@ -128,8 +128,8 @@ Vector<R>& Vector<R>::operator=(const Vector<R>& v){
 }
 
 template <class R>
-void Vector<R>::reserve(unsigned int size){
-    if (size>cap){
+void Vector<R>::reserve(unsigned int new_cap){
+    if (new_cap>cap){
         cap = size;
         R* tmp = new R[cap];
         for (int i=0; i<sz; ++i) tmp[i] = vec[i];
@@ -170,6 +170,8 @@ void Vector<R>::pop_back(){ //cancella (senza restituire) l'ultimo elemento
 template <class R>
 ostream& operator<<(ostream& os, const Vector<R> & v){
     for(int i=0; i<v.size(); ++i) os<<v[i]<<" ";
+
+    return os;
 }
 
 
