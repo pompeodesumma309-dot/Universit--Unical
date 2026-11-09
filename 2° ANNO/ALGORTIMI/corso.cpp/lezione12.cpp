@@ -16,10 +16,10 @@ public:
 }
 
 template <class T>
-const T& myPair<T>::first(){return a;}
+const T& myPair<T>::first() const {return a;}
 
 template <class T>
-const T& myPair<T>::second(){return b;}
+const T& myPair<T>::second() const {return b;}
 
 template <class T>
 T& myPiar<T>::first(){return a;}
@@ -115,7 +115,7 @@ R& Vector<R>::operator[](unsigned int i) {
 }
 
 template <class R>
-vector<R>& Vector<R>::operator=(const Vector<R>& v){
+Vector<R>& Vector<R>::operator=(const Vector<R>& v){
     if (this != &v){
         sz = v.sz;
         cap = v.cap;
@@ -129,7 +129,7 @@ vector<R>& Vector<R>::operator=(const Vector<R>& v){
 
 template <class R>
 void Vector<R>::reserve(unsigned int size){
-    if (size<cap){
+    if (size>cap){
         cap = size;
         R* tmp = new R[cap];
         for (int i=0; i<sz; ++i) tmp[i] = vec[i];
@@ -148,7 +148,7 @@ void Vector<R>::resize(unsigned int size){
 template <class R>
 void Vector<R>::push_back(const R& e){
     if(sz == cap) reserve(cap*2);
-    vec[size] = e;
+    vec[sz] = e;
     sz++;
 
 }
