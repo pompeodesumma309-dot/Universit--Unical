@@ -3,7 +3,7 @@
 cplusplus.com (riferimento)
 - pair
 - vector
-- sting
+- string
 - algorithm
 
 ```cpp
@@ -15,7 +15,7 @@ using namespace std;
 int main(){
     vector<int> vint(6,0);
     int temp = vint.size();
-    for(int j=0; j<temp); ++j){
+    for(int j=0; j<temp; ++j){
         //vint.push_back(j);
         v[j]=j;
     }

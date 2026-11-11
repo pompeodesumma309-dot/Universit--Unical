@@ -233,30 +233,172 @@ enum Direzione {SIN = 0, DES = 0};
 enum -> mi permette di definire un tipo enumerativo, un associazione di valore interi a delle parole, a dei simboli. Associa a ogni simboli un indice.
 
 ```cpp
+
+#include <cassert> // Necessario per usare assert()
+
+enum Direzione{SIN = 0, DES = 1};
+
 template<class T>
 class AlberoB{
+protected:
 
-template<class U>
-struct SNodo{
+  template<class U>
+  struct SNodo{
     U vinfo;
     SNodo * padre; 
     SNodo * pfiglio[2];
 
-    SNodo() : {padre=nullptr; pfiglio[SIN]=nullptr; pfiglio[DES]=nulptr;} // costruttore di defult
+    // CORREZIONE: "nulptr" corretto in "nullptr"
+    SNodo() {padre=nullptr; pfiglio[SIN]=nullptr; pfiglio[DES]=nullptr;} 
 
     SNodo(const U& inf) : vinfo(inf) {padre = pfiglio[SIN] = pfiglio[DES]=0;}
 
     ~SNodo(){delete pfiglio[SIN];delete pfiglio[DES];}
     
-
-}
-
-protected: 
-    SNodo<T> * pradice;
+  }; // CORREZIONE: Aggiunto il punto e virgola mancante a fine struct
+ 
+  SNodo<T> * pradice;
 
 public:
-    
+  AlberoB():pradice(0){};
+  AlberoB(const T& a){pradice = new SNodo<T>(a);}
+
+  void insFiglio(Direzione d, AlberoB<T> &AC){
+    assert(!nullo());
+    assert(pradice->pfiglio[d]==nullptr);
+    pradice->pfiglio[d]=AC.pradice;
+    AC.pradice -> padre = pradice;
+  }
+
+  bool nullo() const {return pradice==nullptr;}
+
+  AlberoB<T> figlio(Direzione d){
+    assert(!nullo());
+    AlberoB<T> AC;
+    AC.pradice = pradice -> pfiglio[d];
+    return AC;
+  }
+
+  AlberoB<T> padre(){ /* ... */ } 
+
+  const T& radice() const{
+    assert(!nullo());
+    return pradice -> vinfo;
+  }
+  
+  bool foglia(){return !nullo() && figlio(SIN).nullo() && figlio(DES).nullo();}
+
+  AlberoB<T> estraiFiglio(Direzione d){/**/} //toglie il figlio dall'albero
+
+  void modRadice(const T& a){/**/} // modifica il contenuto della radice
+  void svuota(){/**/} //cancella il contuno ed i nodi
+  void annulla(){/**/} // cancella tutto il contenuto dell'albero
+
+};
+
+
+ESERCIZO PER CASA : SCRIVERE UN PROGRAMMA CHE LEGGA E SCRIVE UN ALBERO
+
+```
+
+### DATO UN ALBERO CALCOLARE LA PROFONDITA'
+```cpp
+template<class T>
+int profondita(AlberoB<T> A){
+
+  if (A.foglia()) return 1; //ipotesi1
+
+  int p1=profondita(A.figlio(SIN));
+  int p2=profondita(A.figlio(DES));
+
+  return max(p1+1,p2+1);
+  //return (pi>p2)? p1+1:p2+1;
 
 }
+
+// albero bilanciato: per ogni nodo, la differenza della profondità del sottoalbero sin e del sottoalbero destro differisce al massimo di 1.
+template <class T>
+bool bilanciato(AlberoB<T> A){
+
+
+  if(A.nullo()) return true;
+
+  int p1 = profondita(A.figlio(SIN));
+  int p2 = profondita(A.figlio(DES));
+
+  bool b1 = abs(p1-p2) <= 1; //p1 prof, sottoalbero sin, p2 prof, sottoalbero destro
+  bool b2 = bilanciato(A.figlio(SIN));
+  bool b3 = bilanciato(A.figlio(DES));
+
+  return b1 && b2 && b3;
+}
+
+bool bilanciatoProfondo(AlberoB<T> A, int & p);
+
+
+```
+
+### VISITE DEGLI ALBERI
+Visita in pre-ordine (o anticipata)  
+Visita in post-ordine (o posticipata)
+Visita simmetrica
+Visita per livelli
+
+
+>VALUTAZIONE:     STAMPA  
+>ANTICIPATA:    A L E R B C  
+>POSTICIPATA:   E R L O B A  
+>Simmetrica:    E L R A B O  
+>per livelli:   A L B E R O
+
+
+```cpp
+
+template <class T>
+void visitaDFS(AlberoB<T> A){
+  //SIMMETRIA - valutazione: stampa
+
+  if(A.nullo()) return;
+
+  visitaDFS(A.figlio(SIN));
+  valuta(A.radice()); // per esempio cout...
+  visitaDFS(A.figlio(DES));
+
+}
+
+
+//Anticipata: ordine istruzioni 2 1 3 
+
+template <class T>
+void visitaDFS(AlberoB<T> A) {
+  //Anticipata- valutazione: esempio stampa 
+  if (A.nullo()) return; // hnon devo fare alcuna valutazione se l'albero è nullo 
+
+  valuta(A.radice()); //2- per esempio cout...
+  visitaDFS(A.figlio(SIN)); //1
+  visitaDFS(A.figlio(DES)); //3
+
+}
+
+
+// Posticipata: ordine istruzioni; 1 3 2 
+
+template <class T>
+void visitaDFS(AlberoB<T> A) {
+  //Posticipata- valutazione: esempio stampa 
+  if (A.nullo()) return; // hnon devo fare alcuna valutazione se l'albero è nullo 
+  
+  visitaDFS(A.figlio(SIN)); //1
+  visitaDFS(A.figlio(DES)); //3
+  valuta(A.radice()); //2- per esempio cout...
+
+}
+
+```
+
+### VISITA PER LIVELLI
+
+```cpp
+
 
 ```
