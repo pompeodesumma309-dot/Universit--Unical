@@ -13,11 +13,14 @@ cplusplus.com (riferimento)
 using namespace std;
 
 int main(){
-    vector<int> vint(6,0);
-    int temp = vint.size();
+    vector<int> vint(6,0); // crea un vettore di numeri interi. Il primo numero->6 sono le caselle [], il secondo numero->0, significa riempire le 6 caselle con 0
+
+    int temp = vint.size(); // quanti elementi ci sono nel vettore 
+
     for(int j=0; j<temp; ++j){
-        //vint.push_back(j);
-        v[j]=j;
+        //vint.push_back(j); -> non lo andiamo ad usare poichè andrà ad aggiungere ogni volta un elemento alla fine dell'array quindi pui ci andremo a ritrovare con 12 elementi 
+
+        vint[j]=j; // andiamo a sovrascrivere l'array quindi il risultato finale sarà [0,1,2,3,4,5]
     }
 
     for (auto i=vint.begin(); i!=vint.end();++i){
@@ -31,27 +34,32 @@ return 0;
 ```cpp
 #include <iostream>
 #include <vector>
-#include <iterator>
-#include <algorithm>
+#include <iterator> // serve per ostream_iterator
+#include <algorithm> // serve per sort, unique, copy
 #include <string>
 
 using namespace std;
 
 int main() {
-    vector<string> vector_of_strings;
+    vector<string> vector_of_strings; // vector vuoto dimensione 0
     string s;
 
     cout << "Enter the string to be sorted:\n";
 
+    // LETTURA
     while (getline(cin, s) && s != "end")
         vector_of_strings.push_back(s);
 
+    // ORDINAMENTO
     sort(vector_of_strings.begin(), vector_of_strings.end());
 
+    // INDIVIDUAZIONE DUPLICATI
     vector<string>::iterator pos = unique(vector_of_strings.begin(), vector_of_strings.end());
 
+    // CANCELLAZIONE EFFETTIVA
     vector_of_strings.erase(pos, vector_of_strings.end());
 
+    // STAMPA
     copy(vector_of_strings.begin(),
          vector_of_strings.end(),
          ostream_iterator<string>(cout, "\t"));
@@ -69,12 +77,14 @@ class nome_classe_derivata: /*specificatore di accesso*/classe_padre{
 }
 
 class Polygon{
-    int width, height;
 protected:
+    int width, height;
+
+public:
     void set_values(int a, int b){width=a; height= b;}
 }
 
-class Rectangle: public/protected/private Polygon{ // possiamo averla di 3 tipi
+class Rectangle: public Polygon{ // possiamo averla di 3 tipi
 public:
     int area(){return width*height;}
 
@@ -97,6 +107,7 @@ int main(){
     Rectangle r;
     Triangle t;
     Polygon p;
+
     p.set_values(4,5); //ok, p.area() NO
     r.set_values(4, 5); //posso farlo solo perchè rectangle è derivante
     //pubblica di Polygon, altrimenti diventa inaccessibile
@@ -123,8 +134,16 @@ definire una classe sorted_vector
 class sorted_vector: protected vector<int> {
     vector<int> v; //SBAGLIATA
 public:
-    void insert(int);
-    int operator[] (int) const; // come accedo all' i-esimo elemento
+    void insert(int valore){ // noi nel main possiamo anda ìre a chiamare questa funzione
+
+        this-> push_back(valore); // MA NON QUESTA!!
+        sort(this->begin(), this -> end());// MA NON QUESTA!!
+
+    }
+
+    int operator[] (int index) const{
+        return vector<int>::operator[](index);
+    } // come accedo all' i-esimo elemento
 }
 
 ``` 
@@ -138,12 +157,14 @@ class Mother{
 
 class Daughter: public Mother{
     public:
-    Daughter(int a) {cout<<"Daughter: one parameter"<<endl;}
+    Daughter(int a){
+        cout<<"Daughter: one parameter"<<endl;
+    }
 }
 
 class Son: public Mother{
     public:
-    Son(int a){cout<<"Son: one parameters"<<endl;}
+    Son(int a): Mother(a){cout<<"Son: one parameters"<<endl;}
 }
 
 int main(){

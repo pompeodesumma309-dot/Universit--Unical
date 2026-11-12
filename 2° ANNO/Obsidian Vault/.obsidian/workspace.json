@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "8a2476dd9aab1f58",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Appunti Unical EXCAW/programmazione/lezione13.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "lezione13"
+            }
+          },
+          {
             "id": "c4219cc388a75a52",
             "type": "leaf",
             "state": {
@@ -31,7 +43,8 @@
               "title": "TEORIA 4 RICERCA"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "6517aaaf1f55a141",
@@ -199,10 +213,11 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4a4195dcfb1078b3",
+  "active": "8a2476dd9aab1f58",
   "lastOpenFiles": [
-    "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 4 RICERCA.md",
     "Appunti Unical EXCAW/BASE DI DATI EXCALIDAW/ESERCITAZIONE2.excalidraw.md",
+    "Appunti Unical EXCAW/programmazione/lezione13.md",
+    "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 4 RICERCA.md",
     "Appunti Unical EXCAW/programmazione/lezione12.md",
     "Appunti Unical EXCAW/programmazione/lezione11.md",
     "Appunti Unical EXCAW/RICERCA OPERATIVA EXCWA/TEORIA 3 RICERCA OPERATIVA.md",
