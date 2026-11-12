@@ -4,9 +4,11 @@
 sfrutta la proprietà in cui un puntatore di una classe (base o derivate) può puntare anche in oggetti della classe derivata.
 
 ```cpp
-class Polygon{
-    int width, height;
+class Polygon{    
 protected:
+    int width, height;
+    
+public:
     void set_values(int a, int b){width=a; height= b;}
     virtual int area() {return 0;}
 }

@@ -394,11 +394,143 @@ void visitaDFS(AlberoB<T> A) {
 
 }
 
+//typedef AlberoB<int> AlberoInt;
+
+template <class T>
+void visitaBFS(AlberoB<T> A){
+  if(A.nullo()) return;
+
+  queue<AlberoB<T>> q;
+  q.push(A);
+  
+  while(!q.empty()){
+    AlberoB<T> temp=q.front();
+    q.pop();
+    valuta(temp.radice());
+
+    if(!temp.figlio(SIN).nullo()) {q.push(temp.figlio(SIN));}
+    if(!temp.figlio(DES).nullo()) {q.push(temp.filgio(DES));}
+
+  }
+
+}
 ```
 
-### VISITA PER LIVELLI
+**SE SERVE SAPERE ANCHE IL LIVELLO DI CIASCUN NODO?**
 
 ```cpp
+template <class T>
+void visitaBFS(AlberoB<T> A){
+  if(A.nullo()) return;
 
+  queue<AlberoB<T,int>> q; // aggiungiamo una coppia
+  q.push(A,1); //passiamo il valore
+  
+  while(!q.empty()){
+
+    AlberoB<T> temp=q.front().first;
+    int liv = q.front().second;
+
+    q.pop();
+    valuta(temp.radice());
+
+    if(!temp.figlio(SIN).nullo()) {q.push(temp.figlio(SIN), liv+1);}
+
+    if(!temp.figlio(DES).nullo()) {q.push(temp.filgio(DES), liv+1);}
+
+  }
+
+}
+```
+
+**COME PASSARE I LIVELLI ANCHE  CON LE VISITE IN PROFONDITA':**
+```cpp
+template <class T>
+void visitaDFS(AlberoB<T> A, int liv){
+
+  if(A.nullo()) return;
+
+  visitaDFS(A.figlio(SIN), liv + 1);
+  valuta(A.radice()); 
+  visitaDFS(A.figlio(DES), liv + 1);
+
+}
+
+```
+
+**VEDIAMO CON LA SOMMA**
+```cpp
+template<class T>
+int somma(AlberoB<T> A){
+  if (A.nullo()) return 0;
+  return somma(A.figlio(SIN)) + somma(A.figlio(DES)) + A.radice();
+
+
+}
+
+
+```
+
+**SOMMA SOLO SUL NODO IN PROFONDITA'**
+```cpp
+template <class T>
+void visitaDFS(AlberoB<T> A, int & somma){
+
+  if(A.nullo()) return;
+
+  visitaDFS(A.figlio(SIN));
+  somma+=A.radice(); 
+  visitaDFS(A.figlio(DES));
+
+}
+
+```
+
+**SCRIVERE UNA FUNZIONE CHE DATO UN ALBERO ED UN VALORE X "CAPISCA" SE X E' PRESENTE**
+
+CI faremo restituire l'albero con radice in X se è presente altrimenti un albero nullo.
+```cpp
+template <class T>
+AlberoB<T> cerca (AlberoB<T> A,const T& x){
+  if(A.nullo() || A.radice()==x) return A;
+
+  AlberoB<T> tmp=cerca(A.figlio(SIN),x);
+
+  if(!tmp.nullo()) return tmp; 
+  else return cerca(A.figlio(DES), X);
+
+}
+
+// EQUIVALE A UN COSTO DI RICERCA LINEARE DI O(n)
+```
+
+### **ORDINARE GLI ELEMENTI IN UN ALBERO**
+
+Quando siamo in un nodo 'x' andiamo a mettere a sinistra tutti i numero più piccoli di 'x'-> <x e a destra tutti i numeri piu grandi di 'x' -> >x
+
+### **RICERCA DI UN NUMERO**  
+**CASO PEGGIORE:** profondità massima dell'albero  
+**CASO MIGLIORE:** log(n)
+
+
+### ORDINAMENTO DI UN ALBERO
+Quando abbiamo una lista di numeri come [1,2,3,4,5,6,7,8,9]  
+- Una cosa utile da fare sarebbe iniziare dalla metta, quindi 5, cosi da evitare che l'albero abbiamo un solo ramo.  
+- Oppure un altro metodo sarebbe disordinare l'albero.
+
+
+### POSSIAMO UTLIZZARE ANCHE L'EREDITARIETA'
+```cpp
+template <class T>
+class ABR : protected AlberoB<T> {
+  public:
+    AlberoB<T>::foglia;
+    Albero<T>::radice;
+    AlberoB<T>::nullo;
+    ....(tutte le funzioni)
+
+    void ins(const T& a); // inserimento ordinato
+    ABR<T> cerca(const T& a);
+}
 
 ```
