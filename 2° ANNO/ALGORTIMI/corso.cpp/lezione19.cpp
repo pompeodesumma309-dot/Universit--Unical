@@ -147,3 +147,40 @@ void dfs(int s, const Grafo& g, vector<bool> & visitati){
 }
 
 ```
+
+### Visita in ampiezza -> O(n<sup>2</sup>)
+```cpp
+vector<bool> bfs(const Grafo& g, int s){
+    vector<bool> visitati(g.n(), false);
+
+    queue<int> q;
+    q.push(s);
+    visitati[s] = true;
+
+    while(!q.empty()){
+
+        int u = q.top();
+        q.pop();
+        valuta(u);
+
+        for(int v=0; v<g.n(); ++v){
+            if (u!=v && g(u,v) && !visitati[v]){
+
+                q.push(v);
+                visitati[v] = true;
+            }
+        }
+    }
+    return visitati;
+}
+```
+
+### ESERCIZIO: CALCOLARE LA CHIUSURA TRANSITIVA DI UN GRAFO
+G1 è la chiusura transitiva di G se per ogni coppia di nodi (u,v), se v è raggiungibile da u in G, esiste un arco (u,v) in G1
+
+```cpp
+Grafo chiusuraTransitiva(const Grafo& G){
+    Grafo g1(g.n());
+}
+
+```
