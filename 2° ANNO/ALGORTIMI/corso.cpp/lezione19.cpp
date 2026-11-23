@@ -180,7 +180,130 @@ G1 è la chiusura transitiva di G se per ogni coppia di nodi (u,v), se v è ragg
 
 ```cpp
 Grafo chiusuraTransitiva(const Grafo& G){
-    Grafo g1(g.n());
+    Grafo G1(G.n());
+
+    for(int u=0; u<G.n(); ++u){
+        vector<bool> raggiungibili=bfs(G, u);
+
+        for(int v=0; v<G.n(); ++v){
+            if(u!=v && raggiungibili[v]){
+
+                G1(u,v,true);
+            }
+        }
+    }
+    return G1;
+}
+```
+
+### DATO UN GRAFO E DUE NODI (u, v) CALCOLARE UN CAMMINO, SE ESISTE, TRA s E t
+
+```cpp
+vector<int> bfs(const Grafo& g, int s){
+
+    vector<bool> visitati(g.n(), false);
+    vector<int> p(g.n(), -1);
+    queue<int> q;
+
+    q.push(s);
+    visitati[s] = true;
+    p[s] = s;
+    
+    while(!q.empty()){
+
+        int u = q.front();
+        q.pop();
+
+        for(int v=0; v<g.n(); ++v){
+            if(u!=v && g(u,v) && !visitati[v]){
+                q.push(v);
+                p[v] = u;
+                visitati[v] = true;
+            }
+        }
+    }
+    return p;
+}
+```
+
+```cpp
+void trovaCammino(int s, int t, const vector<int> & p, queue<int> & cammino){
+
+    if(s==t) cammino.push(s);
+    else if (t==-1) return;
+    else{
+        trovaCammino(s, p[t], p, cammino);
+        cammino.push(t);
+    }
+}
+```
+
+```cpp
+queue<int> ricostruisciCammino(int s, int t, const Grafo& g){
+    vector<int> precedessori=bfs(g, s);
+    queue<int> c;
+
+    if(precedessori[t] == -1) return c;
+    trovaCammino(s, t, predecessori, c);
+    return c;
+
+}
+```
+
+```cpp
+bool trovaCammino(const Grafo& g, int s, int t, vector<bool> & visitati, list<int> & cammino){
+    if (s==t){
+
+        visitati[s] = true;
+        return true;
+    }
+    else{
+
+        visitati[s] = true;
+        bool trovato = false;
+
+        for(int j=0; j<g.n() && !trovato; ++j){
+            if(s!=j && g(s,j) && !visitati[j]){
+
+                cammino.push(j);
+                trovato = trovaCammino(g, j, t, visitati, cammino);
+                if(!trovato) cammino.pop_back();
+            }
+        }
+
+        return trovato;
+    }
+}
+
+```
+
+### SOLUZIONE ESERCIZIO: SCRIVERE UNA FUNZIONE ESERCIZIO 1 CHE RESTITUSICA UNA STRINGA
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+string esercizio1 (const Grafo& G){
+    bool verifica = true;
+    for (int i=0; i<G.n() && verifica; ++i){
+        int somma=0;
+
+        for(int j=0; j<G.n(); ++j){
+            if(i!=j && G(j,i) != 0) somma+=G(j,i);
+        }
+
+        if(somma>= G.dep(i)) verifica = false;
+    }
+    if(!verifica) return "NO";
+
+    for(int i=0; i<G.n() && verifica; ++i){
+        for (int j=0; j<G.n(); ++j){
+
+            if(i!=j && G(j,i) !=0 && G.dep(j) < G.dep(i)) verifica = true;
+        }
+    }
 }
 
 ```
