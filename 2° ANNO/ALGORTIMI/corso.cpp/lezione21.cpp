@@ -64,7 +64,7 @@ struct TCambio{
     TCambio (int n) : nMonete (n,0) ,valore(0){}
 };
 
-TCambio cambio(const vector<float>& tagli, flloat valoreAssegno){
+TCambio cambio(const vector<float>& tagli, float valoreAssegno){
     int n = tagli.size();
     TCambio sol(n);
     for(int i=0; i<n && sol.valore < valoreAssegno; ++i){
@@ -76,9 +76,58 @@ TCambio cambio(const vector<float>& tagli, flloat valoreAssegno){
         sol.nMonete[n-1]++;
         sol.valore += tagli[n-1];
     }
-    
+
+    return sol;
+}
+```
+
+### PROBLEMA DELLA BISACCIA (KNAPSACK)
+$$ \max \quad F = \sum_{i=1}^{m} v_i \cdot x_i $$
+
+$$ \begin{cases} 
+\sum_{i=1}^{m} c_i \cdot x_i \le C_{max} \\ 
+x_i \in \{0, 1\} 
+\end{cases} $$
+
+- Ordina per valore specifico decrescente 
+
+Per ogni oggetto x_i:   
+- 1 se c_i < residuo 
+- 0 altrimenti 
+
+
+Si tratta della **variante 0/1 Knapsack**: abbiamo un "contenitore" con una capacità massima e una serie di oggetti. Ogni oggetto ha un peso (costo) e un valore. Possiamo prendere o non prendere un oggetto e dobbiamo massimizzare il valore totale senza superare il limite di capacità.
+
+```cpp
+struct Toggetto {int costo, valore};
+
+bool greatherThan (Toggetto o1, Toggetto o2){ // serve per dire alla funzione sort come deve ordinare gli oggetti
+    return (o1.valore/o1.costo) > (o2.valore/o2.costo); // dal più alto al più basso
 }
 
+// l'idea dello zaino è "prendi prima gli oggetti che hanno il maglior rapporto valore/costo"
 
+vector<bool> knapsack_01(vector<Toggetto>& oggetti, int CMax){ // avremmo un vettore con soli valori booleani e andremo a prendere solo i true
+
+    int n = oggetti.size(); // num totali di oggetti a disposizione 
+
+    sort(oggetti.begin(), oggetti.end(), greatherThan); // ordiniamo il vettore dal raooporto valore/costo più altro al più basso
+
+    vector<bool> sol(n, false);
+    int Cspeso = 0;
+
+    for (int i=0; i<n && Cspeso < CMax; ++i){
+        if((Cspeso + oggetti[i].costo) < CMax){
+            sol[i] = true;
+            Cspeso += oggetti[i].costo;
+        }
+    }
+    return sol;
+
+}
 ```
+
+### VARIANTE CON GARANZIA
+Risolvo "basic"
+Esiste v_i > sol.valore -> si fai spazio ad o_i
 
